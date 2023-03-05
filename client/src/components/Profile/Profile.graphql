@@ -1,0 +1,62 @@
+query GetRecruiter($getUserByIdId: ID!) {
+  getUserById(id: $getUserByIdId) {
+    id
+    nickname
+    userInfo {
+      email
+      firstName
+      lastName
+    }
+    company {
+      id
+      name
+      vacancies {
+        id
+        title
+        minSalary
+        maxSalary
+        experience
+        applications {
+          status
+          user {
+            id
+            userInfo {
+              firstName
+              lastName
+              experience
+              email
+              salary
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+mutation AddVacancy($data: AddVacancyInput!) {
+  addVacancy(data: $data) {
+    id
+  }
+}
+
+query GetLocations {
+  getLocations {
+    title
+    id
+  }
+}
+
+query GetSkills {
+  getSkills {
+    id
+    title
+  }
+}
+
+query GetBenefits {
+  getBenefits {
+    id
+    title
+  }
+}

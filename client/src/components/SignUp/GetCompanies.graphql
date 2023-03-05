@@ -1,0 +1,12 @@
+query GetCompanies {
+  getCompanies {
+    id
+    name
+  }
+}
+
+mutation SelectCompany($userId: ID!, $companyId: ID!) {
+  selectCompany(userId: $userId, companyId: $companyId) {
+    __typename
+  }
+}

@@ -1,0 +1,6 @@
+mutation SignIn($nickname: String!, $password: String!) {
+  signIn(nickname: $nickname, password: $password) {
+    id
+    role
+  }
+}
